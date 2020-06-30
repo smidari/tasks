@@ -13,7 +13,7 @@ const Task1: React.FC<Task1Type> = props => (
         <Row>
             <Col xs={4} md={1} className={style.avatar}>
                 <Image
-                    src="https://lh3.googleusercontent.com/proxy/ZPE6AtomrywrvAsG7RZ6u5RXGIdFjxV4Q_eNwE8BrpSe3zSTVOA66jkMxFXHoHJuXJ4ZfTHQ6S1BwKbkSYexFZ9ER-GaPcQZwr0KkDnRovSjEj2luIO0BqoM4Q"/>
+                    src="/img/task1.jpg"/>
             </Col>
             <Col xs={6} md={3} className={style.message}>
                 <h6>{props.name}</h6>
