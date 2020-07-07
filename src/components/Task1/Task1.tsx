@@ -1,6 +1,6 @@
 import React from "react";
 import style from "./Task1.module.css";
-import {Container, Row, Сol, Image} from "react-bootstrap";
+import {Container, Row, Image, Col} from "react-bootstrap";
 
 type Task1Type = {
     name: string,

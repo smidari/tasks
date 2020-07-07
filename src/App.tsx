@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import './App.css';
 import Task1 from "./components/Task1/Task1";
 import Task2 from "./components/Task2/Task2";
+import Task3 from "./components/Task3/Task3";
 
 export type toDoType = {
     id: number
@@ -62,6 +63,7 @@ function App() {
         <div className='app-wrapper'>
             <Task1 name='Artem' text='npm start нажимал?' time='20:00'/>
             <Task2 toDo={toDoArr} sortToDo={sortToDo} removeToDo={removeToDo}/>
+            <Task3/>
         </div>
     );
 }

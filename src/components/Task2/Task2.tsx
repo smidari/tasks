@@ -8,8 +8,8 @@ type PropsType = {
     removeToDo: (id: number) => void
 }
 
-const Task2: React.FC<PropsType> = props => (
-    <Container>
+const Task2: React.FC<PropsType> = props => {
+    return  <Container>
         <Row>
             <Col xs={4} md={1}>
                 <Table striped bordered hover>
@@ -34,6 +34,7 @@ const Task2: React.FC<PropsType> = props => (
             </Col>
         </Row>
     </Container>
-);
+}
+;
 
 export default Task2;
