@@ -3,6 +3,7 @@ import './App.css';
 import Task1 from "./components/Task1/Task1";
 import Task2 from "./components/Task2/Task2";
 import Task3 from "./components/Task3/Task3";
+import Task4 from "./components/Task4/Task4";
 
 export type toDoType = {
     id: number
@@ -64,6 +65,7 @@ function App() {
             <Task1 name='Artem' text='npm start нажимал?' time='20:00'/>
             <Task2 toDo={toDoArr} sortToDo={sortToDo} removeToDo={removeToDo}/>
             <Task3/>
+            <Task4/>
         </div>
     );
 }

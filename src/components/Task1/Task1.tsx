@@ -10,6 +10,7 @@ type Task1Type = {
 
 const Task1: React.FC<Task1Type> = props => (
     <Container className={style.dialog}>
+        <h3>Task 1</h3>
         <Row>
             <Col xs={4} md={1} className={style.avatar}>
                 <Image

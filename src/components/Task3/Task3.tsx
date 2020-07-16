@@ -1,8 +1,10 @@
-import React, {useState, ChangeEvent, KeyboardEvent} from "react";
-import {Button, Col, Container, FormControl, InputGroup, Row} from "react-bootstrap";
+import React, {useState, KeyboardEvent} from "react";
+import {Col, Container, InputGroup, Row} from "react-bootstrap";
 import {v1} from "uuid";
+import MyInput from "../common/MyInput/MyInput";
+import MyBtn from "../common/MyBtn/MyBtn";
 
-const Task3 = (props: any) => {
+const Task3 = () => {
     let [arrNames, setArrNames] = useState([{}]);
     let [name, setName] = useState('');
 
@@ -21,29 +23,19 @@ const Task3 = (props: any) => {
         setName('');
     }
 
-    function onNameChanged(e: ChangeEvent<HTMLInputElement>) {
-        setName(e.currentTarget.value)
-    }
-
     function onNameKeyPressed(e: KeyboardEvent<HTMLInputElement>) {
-        if (e.key === "Enter") {
-            toWelcome(name);
-            setName('');
-        }
+        (e.key === "Enter") && toWelcomeOnClick()
     }
 
     return (
         <Container>
+            <h3>Task 3</h3>
             <Row>
                 <Col xs={4} md={5}>
                     <InputGroup className="mb-3">
-                        <FormControl
-                            value={name}
-                            onChange={onNameChanged}
-                            onKeyPress={onNameKeyPressed}
-                        />
+                        < MyInput value={name} onChange={setName} onKeyPress={onNameKeyPressed} />
                         <InputGroup.Append>
-                            <Button variant="outline-secondary" onClick={toWelcomeOnClick}>Button</Button>
+                            <MyBtn onClick={toWelcomeOnClick} nameBtn={'Add'}/>
                         </InputGroup.Append>
                     </InputGroup>
                     <p>Количество имен {
