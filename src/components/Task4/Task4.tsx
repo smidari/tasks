@@ -9,7 +9,7 @@ const Task4 = () => {
     let [testInput, setTestInput] = useState('');
     let [testCheckBox, setTestCheckBox] = useState(false);
     return (
-        <Container className={s.wrapper}>
+        <Container>
             <h3>Task 4</h3>
             <Row>
                 <Col xs={4} md={5}>

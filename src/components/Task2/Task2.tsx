@@ -1,7 +1,7 @@
 import React from "react";
 import {Col, Container, Row, Table} from "react-bootstrap";
-import {toDoType} from "../../App";
 import MyBtn from "../common/MyBtn/MyBtn";
+import {toDoType} from "../pages/PreJunior";
 
 type PropsType = {
     toDo: Array<toDoType>
