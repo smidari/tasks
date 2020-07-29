@@ -3,6 +3,7 @@ import Task1 from "../Task1/Task1";
 import Task2 from "../Task2/Task2";
 import Task3 from "../Task3/Task3";
 import Task4 from "../Task4/Task4";
+import EditableSpan from "../common/EditableSpan";
 
 export type toDoType = {
     id: number
@@ -18,6 +19,7 @@ const PreJunior = () => {
         {id: 4, n: "React", p: "hight"},
         {id: 5, n: "Redux", p: "middle"}
     ]);
+
     function sortToDo(arr: Array<toDoType>) {
 
         let newArr = arr.map(item => {
@@ -52,6 +54,7 @@ const PreJunior = () => {
         });
         setToDo(toDoArrSort)
     }
+
     function removeToDo(id: number) {
         let filterTasks = toDoArr.filter(item => item.id !== id);
         setToDo(filterTasks);

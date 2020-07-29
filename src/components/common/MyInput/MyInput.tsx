@@ -6,6 +6,8 @@ type MyInputType = {
     onChange: (e: string) => void
     onKeyPress?: (e: KeyboardEvent<HTMLInputElement>) => void
     error?: boolean
+    onBlur?: () => void
+    autoFocus?: boolean
 };
 
 const MyInput = (props: MyInputType) => (
@@ -13,7 +15,10 @@ const MyInput = (props: MyInputType) => (
         className={`${m.input} ${props.error ? m.error : ''}`}
         value={props.value}
         onChange={event => props.onChange(event.target.value)}
-        onKeyPress={props.onKeyPress}/>
+        onKeyPress={props.onKeyPress}
+        onBlur={props.onBlur}
+        autoFocus={true}
+    />
 );
 
 export default MyInput;
