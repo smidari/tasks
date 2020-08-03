@@ -3,32 +3,33 @@ import EditableSpan from "../common/EditableSpan";
 import {Col, Container, Row} from "react-bootstrap";
 import MyBtn from "../common/MyBtn/MyBtn";
 
+type StateType = {
+    name: string
+}
+
+export function saveState<T>(key: string, state: T) {
+    const stateAsString = JSON.stringify(state);
+    localStorage.setItem(key, stateAsString)
+}
+
+export function restoreState<T>(key: string, defaultState: T) {
+    const stateAsString = localStorage.getItem(key);
+    if (stateAsString !== null) defaultState = JSON.parse(stateAsString) as T;
+    return defaultState;
+}
 
 const Task6 = () => {
     let [name, setName] = useState('Dasha');
     const [valueInput, setValueInput] = useState('');
+
     const saveName = () => (setName(valueInput));
 
+    const saveStateHandler = () => saveState('name', {name: name});
 
-
-    function saveState<T> (key: string, state: T) {
-        const stateAsString = JSON.stringify(state);
-        localStorage.setItem(key, stateAsString)
-    }
-
-    function restoreState<T>(key: string, defaultState: T) {
-        const stateAsString = localStorage.getItem(key);
-        if (stateAsString !== null) defaultState = JSON.parse(stateAsString) as T;
-        return defaultState;
-    }
-    type StateType = {
-        name: string
-    }
-    function test () {
-        saveState<StateType>("test", {name: "A"})
+    const restoreNameHandler = () => {
+        const stateFromLocalStorage = restoreState('name', {name: ''});
+        setName(stateFromLocalStorage['name'])
     };
-    // получем в переменную state объект из ячейки "test" или дэфолтный объект если ячейка пуста
-    const state: StateType = restoreState<StateType>("test", {name:''});
 
     return (
         <Container>
@@ -42,11 +43,9 @@ const Task6 = () => {
                         saveValue={saveName}/>
 
                 </Col>
-                <Col md={2}>
-                    <button onClick={test}>test</button>
-                    <button onClick={test}>delete</button>
-                    <MyBtn onClick={()=>{}} nameBtn={'Save'} />
-                    <MyBtn onClick={()=>{}} nameBtn={'Add'} />
+                <Col md={4}>
+                    <MyBtn onClick={saveStateHandler} nameBtn={'Save'}/>
+                    <MyBtn onClick={restoreNameHandler} nameBtn={'Restore'}/>
                 </Col>
             </Row>
 
