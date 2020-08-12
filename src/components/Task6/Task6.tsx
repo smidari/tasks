@@ -14,7 +14,9 @@ export function saveState<T>(key: string, state: T) {
 
 export function restoreState<T>(key: string, defaultState: T) {
     const stateAsString = localStorage.getItem(key);
-    if (stateAsString !== null) defaultState = JSON.parse(stateAsString) as T;
+    if (stateAsString !== null) {
+        defaultState = JSON.parse(stateAsString) as T;
+    }
     return defaultState;
 }
 
@@ -33,7 +35,9 @@ const Task6 = () => {
 
     return (
         <Container>
-            <h3>Task 6</h3>
+            <Row>
+                <h3>Task 6</h3>
+            </Row>
             <Row>
                 <Col md={4}>
                     <EditableSpan
