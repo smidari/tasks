@@ -12,8 +12,8 @@ const Radio = (props: RadioType) => {
     };
     return (
         <>
-            {props.inputValues.map(item => (
-                    <div>
+            {props.inputValues.map((item, index)=> (
+                    <div key={index}>
                         <input
                             type="radio"
                             name={props.name}
