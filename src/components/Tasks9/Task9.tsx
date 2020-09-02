@@ -8,11 +8,11 @@ const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", 
 const Task9 = () => {
     const [timerId, setTimerId] = useState();
     const [date, setDate] = useState(new Date());
-    const UpdateTime = () => {
+    const updateTime = () => {
         const timer_id = setInterval(() => setDate(new Date()), 1000);
         setTimerId(timer_id)
     };
-    const ClearInterval = () => {
+    const clearTimeInterval = () => {
         clearInterval(timerId);
     };
 
@@ -39,8 +39,8 @@ const Task9 = () => {
             </Row>
             <Row>
                 <Col md={4}>
-                    <MyBtn onClick={UpdateTime} nameBtn={'uptade'}/>
-                    <MyBtn onClick={ClearInterval} nameBtn={'clear'}/>
+                    <MyBtn onClick={updateTime} nameBtn={'uptade'}/>
+                    <MyBtn onClick={clearTimeInterval} nameBtn={'clear'}/>
                 </Col>
             </Row>
         </Container>
