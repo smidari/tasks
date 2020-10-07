@@ -1,8 +1,10 @@
-import spinnerReduser from "./spinner-reduser";
+import spinnerReducer from "./spinner-reduser";
 import {combineReducers, createStore} from "redux";
+import {themaSiteReducer} from "./site-thema-rediser";
 
 const rootReducer = combineReducers({
-    spinner: spinnerReduser
+    spinner: spinnerReducer,
+    theme: themaSiteReducer
 });
 // непосредственно создаём store
 export const store = createStore(rootReducer);

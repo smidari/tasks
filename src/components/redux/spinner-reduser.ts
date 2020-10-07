@@ -6,7 +6,7 @@ type spinnerACType = {
     type: 'SET_LOADING'
     loading: boolean
 }
-const spinnerReduser = (state: initialStateType = {loading: false}, action: ActionsType) => {
+const spinnerReducer = (state: initialStateType = {loading: false}, action: spinnerACType) => {
     switch (action.type) {
         case 'SET_LOADING': {
             return {...state, loading: action.loading};
@@ -16,4 +16,4 @@ const spinnerReduser = (state: initialStateType = {loading: false}, action: Acti
     }
 };
 export const spinnerAC = (type: boolean): spinnerACType => ({type: 'SET_LOADING', loading: type});
-export default spinnerReduser;
+export default spinnerReducer;
