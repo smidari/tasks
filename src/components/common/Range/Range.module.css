@@ -1,0 +1,10 @@
+.range {
+    height: 26px;
+    width: 200px;
+    cursor: pointer;
+    border-radius: 10px;
+}
+.range::-webkit-slider-runnable-track {
+    background: rgb(168, 255, 247);
+    border-radius: 10px;
+}
